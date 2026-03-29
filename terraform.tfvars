@@ -1,6 +1,6 @@
 # Production Example
-project_id    = "1097684345446"
-project_name  = "fresh-84"
+project_id    = ""
+project_name  = ""
 environment   = "dev"
 
 # Network
