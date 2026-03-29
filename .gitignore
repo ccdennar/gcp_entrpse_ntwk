@@ -3,3 +3,6 @@
 *.tfstate.backup
 crash.log
 .terraform.lock.hcl
+terraform-key.json
+*.json
+sa-key.json
