@@ -1,0 +1,1689 @@
+{
+  "version": 4,
+  "terraform_version": "1.5.7",
+  "serial": 223,
+  "lineage": "1eed4796-a544-09b6-3ce6-71d2cb5620e7",
+  "outputs": {
+    "firewall_rules": {
+      "value": {
+        "allow-monitoring": {
+          "allow": [
+            {
+              "ports": [
+                "9090",
+                "3000"
+              ],
+              "protocol": "tcp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-allow-monitoring",
+          "name": "dev-fresh-84-vpc-allow-monitoring",
+          "priority": 950,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-allow-monitoring",
+          "source_ranges": [
+            "10.0.5.0/24"
+          ],
+          "target_tags": [
+            "monitored"
+          ]
+        },
+        "app": {
+          "allow": [
+            {
+              "ports": [
+                "8080",
+                "9090"
+              ],
+              "protocol": "tcp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-app",
+          "name": "dev-fresh-84-vpc-app",
+          "priority": 1000,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-app",
+          "source_ranges": null,
+          "target_tags": [
+            "app-tier"
+          ]
+        },
+        "bastion": {
+          "allow": [
+            {
+              "ports": [
+                "22"
+              ],
+              "protocol": "tcp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-bastion",
+          "name": "dev-fresh-84-vpc-bastion",
+          "priority": 1000,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-bastion",
+          "source_ranges": [
+            "203.0.113.10/32"
+          ],
+          "target_tags": [
+            "bastion"
+          ]
+        },
+        "database": {
+          "allow": [
+            {
+              "ports": [
+                "5432",
+                "6379"
+              ],
+              "protocol": "tcp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-database",
+          "name": "dev-fresh-84-vpc-database",
+          "priority": 1000,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-database",
+          "source_ranges": null,
+          "target_tags": [
+            "db-tier"
+          ]
+        },
+        "iap": {
+          "allow": [
+            {
+              "ports": [
+                "22",
+                "3389"
+              ],
+              "protocol": "tcp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-iap",
+          "name": "dev-fresh-84-vpc-iap",
+          "priority": 900,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-iap",
+          "source_ranges": [
+            "35.235.240.0/20"
+          ],
+          "target_tags": [
+            "iap-enabled"
+          ]
+        },
+        "internal": {
+          "allow": [
+            {
+              "ports": [],
+              "protocol": "icmp"
+            },
+            {
+              "ports": [],
+              "protocol": "tcp"
+            },
+            {
+              "ports": [],
+              "protocol": "udp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-internal",
+          "name": "dev-fresh-84-vpc-internal",
+          "priority": 1000,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-internal",
+          "source_ranges": [
+            "10.0.0.0/16"
+          ],
+          "target_tags": null
+        },
+        "web": {
+          "allow": [
+            {
+              "ports": [
+                "80",
+                "443"
+              ],
+              "protocol": "tcp"
+            }
+          ],
+          "deny": [],
+          "direction": "INGRESS",
+          "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-web",
+          "name": "dev-fresh-84-vpc-web",
+          "priority": 1000,
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-web",
+          "source_ranges": [
+            "198.51.100.0/24",
+            "203.0.113.0/24"
+          ],
+          "target_tags": [
+            "web-tier"
+          ]
+        }
+      },
+      "type": [
+        "object",
+        {
+          "allow-monitoring": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ],
+          "app": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ],
+          "bastion": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ],
+          "database": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ],
+          "iap": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ],
+          "internal": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ],
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ],
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ],
+          "web": [
+            "object",
+            {
+              "allow": [
+                "tuple",
+                [
+                  [
+                    "object",
+                    {
+                      "ports": [
+                        "list",
+                        "string"
+                      ],
+                      "protocol": "string"
+                    }
+                  ]
+                ]
+              ],
+              "deny": [
+                "tuple",
+                []
+              ],
+              "direction": "string",
+              "id": "string",
+              "name": "string",
+              "priority": "number",
+              "self_link": "string",
+              "source_ranges": [
+                "set",
+                "string"
+              ],
+              "target_tags": [
+                "set",
+                "string"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "nat": {
+      "value": {
+        "us-central1": {
+          "nat_ips": null,
+          "nat_name": "dev-fresh-84-nat-us-central1",
+          "router_name": "dev-fresh-84-router-us-central1"
+        },
+        "us-east1": {
+          "nat_ips": null,
+          "nat_name": "dev-fresh-84-nat-us-east1",
+          "router_name": "dev-fresh-84-router-us-east1"
+        }
+      },
+      "type": [
+        "object",
+        {
+          "us-central1": [
+            "object",
+            {
+              "nat_ips": [
+                "set",
+                "string"
+              ],
+              "nat_name": "string",
+              "router_name": "string"
+            }
+          ],
+          "us-east1": [
+            "object",
+            {
+              "nat_ips": [
+                "set",
+                "string"
+              ],
+              "nat_name": "string",
+              "router_name": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "nat_regions": {
+      "value": [
+        "us-central1",
+        "us-east1"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string"
+        ]
+      ]
+    },
+    "security_summary": {
+      "value": {
+        "deny_all_rules_enabled": true,
+        "flow_logs_enabled": true,
+        "nat_enabled": true,
+        "nat_regions": [
+          "us-central1",
+          "us-east1"
+        ],
+        "private_service_access": true
+      },
+      "type": [
+        "object",
+        {
+          "deny_all_rules_enabled": "bool",
+          "flow_logs_enabled": "bool",
+          "nat_enabled": "bool",
+          "nat_regions": [
+            "list",
+            "string"
+          ],
+          "private_service_access": "bool"
+        }
+      ]
+    },
+    "subnet_ids": {
+      "value": [
+        "projects/1097684345446/regions/us-east1/subnetworks/dev-fresh-84-subnet-api-us-east1",
+        "projects/1097684345446/regions/europe-west1/subnetworks/dev-fresh-84-subnet-cache-europe-west1",
+        "projects/1097684345446/regions/us-central1/subnetworks/dev-fresh-84-subnet-db-us-central1",
+        "projects/1097684345446/regions/us-east1/subnetworks/dev-fresh-84-subnet-mgmt-us-east1",
+        "projects/1097684345446/regions/us-central1/subnetworks/dev-fresh-84-subnet-web-us-central1"
+      ],
+      "type": [
+        "tuple",
+        [
+          "string",
+          "string",
+          "string",
+          "string",
+          "string"
+        ]
+      ]
+    },
+    "subnet_regions": {
+      "value": {
+        "api-us-east1": "us-east1",
+        "cache-europe-west1": "europe-west1",
+        "db-us-central1": "us-central1",
+        "mgmt-us-east1": "us-east1",
+        "web-us-central1": "us-central1"
+      },
+      "type": [
+        "object",
+        {
+          "api-us-east1": "string",
+          "cache-europe-west1": "string",
+          "db-us-central1": "string",
+          "mgmt-us-east1": "string",
+          "web-us-central1": "string"
+        }
+      ]
+    },
+    "subnets": {
+      "value": {
+        "api-us-east1": {
+          "gateway_address": "10.0.1.1",
+          "id": "projects/1097684345446/regions/us-east1/subnetworks/dev-fresh-84-subnet-api-us-east1",
+          "ip_cidr_range": "10.0.1.0/24",
+          "name": "dev-fresh-84-subnet-api-us-east1",
+          "private_ip_google_access": false,
+          "purpose": "API_SERVERS",
+          "region": "us-east1",
+          "secondary_ip_ranges": {},
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-east1/subnetworks/dev-fresh-84-subnet-api-us-east1"
+        },
+        "cache-europe-west1": {
+          "gateway_address": "10.0.2.1",
+          "id": "projects/1097684345446/regions/europe-west1/subnetworks/dev-fresh-84-subnet-cache-europe-west1",
+          "ip_cidr_range": "10.0.2.0/24",
+          "name": "dev-fresh-84-subnet-cache-europe-west1",
+          "private_ip_google_access": true,
+          "purpose": "REDIS_CLUSTER",
+          "region": "europe-west1",
+          "secondary_ip_ranges": {},
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/europe-west1/subnetworks/dev-fresh-84-subnet-cache-europe-west1"
+        },
+        "db-us-central1": {
+          "gateway_address": "10.0.3.1",
+          "id": "projects/1097684345446/regions/us-central1/subnetworks/dev-fresh-84-subnet-db-us-central1",
+          "ip_cidr_range": "10.0.3.0/24",
+          "name": "dev-fresh-84-subnet-db-us-central1",
+          "private_ip_google_access": true,
+          "purpose": "CLOUD_SQL",
+          "region": "us-central1",
+          "secondary_ip_ranges": {},
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-central1/subnetworks/dev-fresh-84-subnet-db-us-central1"
+        },
+        "mgmt-us-east1": {
+          "gateway_address": "10.0.4.1",
+          "id": "projects/1097684345446/regions/us-east1/subnetworks/dev-fresh-84-subnet-mgmt-us-east1",
+          "ip_cidr_range": "10.0.4.0/24",
+          "name": "dev-fresh-84-subnet-mgmt-us-east1",
+          "private_ip_google_access": false,
+          "purpose": "BASTION",
+          "region": "us-east1",
+          "secondary_ip_ranges": {},
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-east1/subnetworks/dev-fresh-84-subnet-mgmt-us-east1"
+        },
+        "web-us-central1": {
+          "gateway_address": "10.0.0.1",
+          "id": "projects/1097684345446/regions/us-central1/subnetworks/dev-fresh-84-subnet-web-us-central1",
+          "ip_cidr_range": "10.0.0.0/24",
+          "name": "dev-fresh-84-subnet-web-us-central1",
+          "private_ip_google_access": false,
+          "purpose": "WEB_SERVERS",
+          "region": "us-central1",
+          "secondary_ip_ranges": {},
+          "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-central1/subnetworks/dev-fresh-84-subnet-web-us-central1"
+        }
+      },
+      "type": [
+        "object",
+        {
+          "api-us-east1": [
+            "object",
+            {
+              "gateway_address": "string",
+              "id": "string",
+              "ip_cidr_range": "string",
+              "name": "string",
+              "private_ip_google_access": "bool",
+              "purpose": "string",
+              "region": "string",
+              "secondary_ip_ranges": [
+                "object",
+                {}
+              ],
+              "self_link": "string"
+            }
+          ],
+          "cache-europe-west1": [
+            "object",
+            {
+              "gateway_address": "string",
+              "id": "string",
+              "ip_cidr_range": "string",
+              "name": "string",
+              "private_ip_google_access": "bool",
+              "purpose": "string",
+              "region": "string",
+              "secondary_ip_ranges": [
+                "object",
+                {}
+              ],
+              "self_link": "string"
+            }
+          ],
+          "db-us-central1": [
+            "object",
+            {
+              "gateway_address": "string",
+              "id": "string",
+              "ip_cidr_range": "string",
+              "name": "string",
+              "private_ip_google_access": "bool",
+              "purpose": "string",
+              "region": "string",
+              "secondary_ip_ranges": [
+                "object",
+                {}
+              ],
+              "self_link": "string"
+            }
+          ],
+          "mgmt-us-east1": [
+            "object",
+            {
+              "gateway_address": "string",
+              "id": "string",
+              "ip_cidr_range": "string",
+              "name": "string",
+              "private_ip_google_access": "bool",
+              "purpose": "string",
+              "region": "string",
+              "secondary_ip_ranges": [
+                "object",
+                {}
+              ],
+              "self_link": "string"
+            }
+          ],
+          "web-us-central1": [
+            "object",
+            {
+              "gateway_address": "string",
+              "id": "string",
+              "ip_cidr_range": "string",
+              "name": "string",
+              "private_ip_google_access": "bool",
+              "purpose": "string",
+              "region": "string",
+              "secondary_ip_ranges": [
+                "object",
+                {}
+              ],
+              "self_link": "string"
+            }
+          ]
+        }
+      ]
+    },
+    "vpc": {
+      "value": {
+        "cidr": "10.0.0.0/16",
+        "id": "projects/1097684345446/global/networks/dev-fresh-84-vpc",
+        "name": "dev-fresh-84-vpc",
+        "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc"
+      },
+      "type": [
+        "object",
+        {
+          "cidr": "string",
+          "id": "string",
+          "name": "string",
+          "self_link": "string"
+        }
+      ]
+    }
+  },
+  "resources": [
+    {
+      "module": "module.cloud_nat[\"us-central1\"]",
+      "mode": "managed",
+      "type": "google_compute_router",
+      "name": "router",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bgp": [
+              {
+                "advertise_mode": "DEFAULT",
+                "advertised_groups": null,
+                "advertised_ip_ranges": [],
+                "asn": 64514,
+                "identifier_range": "",
+                "keepalive_interval": 20
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:16.231-07:00",
+            "description": "",
+            "encrypted_interconnect_router": false,
+            "id": "projects/1097684345446/regions/us-central1/routers/dev-fresh-84-router-us-central1",
+            "name": "dev-fresh-84-router-us-central1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "project": "1097684345446",
+            "region": "us-central1",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-central1/routers/dev-fresh-84-router-us-central1",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloud_nat[\"us-central1\"]",
+      "mode": "managed",
+      "type": "google_compute_router_nat",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_network_tier": "PREMIUM",
+            "drain_nat_ips": null,
+            "enable_dynamic_port_allocation": true,
+            "enable_endpoint_independent_mapping": false,
+            "endpoint_types": [
+              "ENDPOINT_TYPE_VM"
+            ],
+            "icmp_idle_timeout_sec": 30,
+            "id": "1097684345446/us-central1/dev-fresh-84-router-us-central1/dev-fresh-84-nat-us-central1",
+            "log_config": [
+              {
+                "enable": true,
+                "filter": "ALL"
+              }
+            ],
+            "max_ports_per_vm": 1024,
+            "min_ports_per_vm": 128,
+            "name": "dev-fresh-84-nat-us-central1",
+            "nat_ip_allocate_option": "AUTO_ONLY",
+            "nat_ips": null,
+            "project": "1097684345446",
+            "region": "us-central1",
+            "router": "dev-fresh-84-router-us-central1",
+            "rules": [],
+            "source_subnetwork_ip_ranges_to_nat": "ALL_SUBNETWORKS_ALL_IP_RANGES",
+            "subnetwork": [],
+            "tcp_established_idle_timeout_sec": 1200,
+            "tcp_time_wait_timeout_sec": 120,
+            "tcp_transitory_idle_timeout_sec": 30,
+            "timeouts": null,
+            "udp_idle_timeout_sec": 30
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.cloud_nat.google_compute_router.router",
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloud_nat[\"us-east1\"]",
+      "mode": "managed",
+      "type": "google_compute_router",
+      "name": "router",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bgp": [
+              {
+                "advertise_mode": "DEFAULT",
+                "advertised_groups": null,
+                "advertised_ip_ranges": [],
+                "asn": 64514,
+                "identifier_range": "",
+                "keepalive_interval": 20
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:27.201-07:00",
+            "description": "",
+            "encrypted_interconnect_router": false,
+            "id": "projects/1097684345446/regions/us-east1/routers/dev-fresh-84-router-us-east1",
+            "name": "dev-fresh-84-router-us-east1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "project": "1097684345446",
+            "region": "us-east1",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-east1/routers/dev-fresh-84-router-us-east1",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.cloud_nat[\"us-east1\"]",
+      "mode": "managed",
+      "type": "google_compute_router_nat",
+      "name": "nat",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_network_tier": "PREMIUM",
+            "drain_nat_ips": null,
+            "enable_dynamic_port_allocation": true,
+            "enable_endpoint_independent_mapping": false,
+            "endpoint_types": [
+              "ENDPOINT_TYPE_VM"
+            ],
+            "icmp_idle_timeout_sec": 30,
+            "id": "1097684345446/us-east1/dev-fresh-84-router-us-east1/dev-fresh-84-nat-us-east1",
+            "log_config": [
+              {
+                "enable": true,
+                "filter": "ALL"
+              }
+            ],
+            "max_ports_per_vm": 1024,
+            "min_ports_per_vm": 128,
+            "name": "dev-fresh-84-nat-us-east1",
+            "nat_ip_allocate_option": "AUTO_ONLY",
+            "nat_ips": null,
+            "project": "1097684345446",
+            "region": "us-east1",
+            "router": "dev-fresh-84-router-us-east1",
+            "rules": [],
+            "source_subnetwork_ip_ranges_to_nat": "ALL_SUBNETWORKS_ALL_IP_RANGES",
+            "subnetwork": [],
+            "tcp_established_idle_timeout_sec": 1200,
+            "tcp_time_wait_timeout_sec": 120,
+            "tcp_transitory_idle_timeout_sec": 30,
+            "timeouts": null,
+            "udp_idle_timeout_sec": 30
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.cloud_nat.google_compute_router.router",
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.firewall",
+      "mode": "managed",
+      "type": "google_compute_firewall",
+      "name": "deny_all_egress",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "default",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [],
+            "creation_timestamp": "2026-03-25T21:07:16.181-07:00",
+            "deny": [
+              {
+                "ports": [],
+                "protocol": "all"
+              }
+            ],
+            "description": "",
+            "destination_ranges": [
+              "0.0.0.0/0"
+            ],
+            "direction": "EGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-deny-all-egress",
+            "log_config": [],
+            "name": "dev-fresh-84-vpc-deny-all-egress",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 65535,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-deny-all-egress",
+            "source_ranges": null,
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.firewall",
+      "mode": "managed",
+      "type": "google_compute_firewall",
+      "name": "deny_all_ingress",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "default",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [],
+            "creation_timestamp": "2026-03-25T21:07:26.972-07:00",
+            "deny": [
+              {
+                "ports": [],
+                "protocol": "all"
+              }
+            ],
+            "description": "",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-deny-all-ingress",
+            "log_config": [],
+            "name": "dev-fresh-84-vpc-deny-all-ingress",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 65535,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-deny-all-ingress",
+            "source_ranges": [
+              "0.0.0.0/0"
+            ],
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.firewall",
+      "mode": "managed",
+      "type": "google_compute_firewall",
+      "name": "rules",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "allow-monitoring",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "9090",
+                  "3000"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:37.285-07:00",
+            "deny": [],
+            "description": "Allow Prometheus/Grafana scraping",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-allow-monitoring",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-allow-monitoring",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 950,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-allow-monitoring",
+            "source_ranges": [
+              "10.0.5.0/24"
+            ],
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": [
+              "monitored"
+            ],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "app",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "8080",
+                  "9090"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:37.313-07:00",
+            "deny": [],
+            "description": "Allow app tier access from web tier",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-app",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-app",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 1000,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-app",
+            "source_ranges": null,
+            "source_service_accounts": null,
+            "source_tags": [
+              "web-tier"
+            ],
+            "target_service_accounts": null,
+            "target_tags": [
+              "app-tier"
+            ],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "bastion",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "22"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:16.198-07:00",
+            "deny": [],
+            "description": "Allow SSH to bastion hosts",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-bastion",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-bastion",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 1000,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-bastion",
+            "source_ranges": [
+              "203.0.113.10/32"
+            ],
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": [
+              "bastion"
+            ],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "database",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "5432",
+                  "6379"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:27.007-07:00",
+            "deny": [],
+            "description": "Allow database access from app tier",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-database",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-database",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 1000,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-database",
+            "source_ranges": null,
+            "source_service_accounts": null,
+            "source_tags": [
+              "app-tier"
+            ],
+            "target_service_accounts": null,
+            "target_tags": [
+              "db-tier"
+            ],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "iap",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "22",
+                  "3389"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:27.191-07:00",
+            "deny": [],
+            "description": "Allow IAP tunneling",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-iap",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-iap",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 900,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-iap",
+            "source_ranges": [
+              "35.235.240.0/20"
+            ],
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": [
+              "iap-enabled"
+            ],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "internal",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [],
+                "protocol": "icmp"
+              },
+              {
+                "ports": [],
+                "protocol": "tcp"
+              },
+              {
+                "ports": [],
+                "protocol": "udp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:27.222-07:00",
+            "deny": [],
+            "description": "Allow internal VPC traffic",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-internal",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-internal",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 1000,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-internal",
+            "source_ranges": [
+              "10.0.0.0/16"
+            ],
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": null,
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "web",
+          "schema_version": 1,
+          "attributes": {
+            "allow": [
+              {
+                "ports": [
+                  "80",
+                  "443"
+                ],
+                "protocol": "tcp"
+              }
+            ],
+            "creation_timestamp": "2026-03-25T21:07:16.173-07:00",
+            "deny": [],
+            "description": "Allow HTTP/HTTPS to web tier",
+            "destination_ranges": [],
+            "direction": "INGRESS",
+            "disabled": false,
+            "enable_logging": null,
+            "id": "projects/1097684345446/global/firewalls/dev-fresh-84-vpc-web",
+            "log_config": [
+              {
+                "metadata": "INCLUDE_ALL_METADATA"
+              }
+            ],
+            "name": "dev-fresh-84-vpc-web",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "priority": 1000,
+            "project": "1097684345446",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/firewalls/dev-fresh-84-vpc-web",
+            "source_ranges": [
+              "198.51.100.0/24",
+              "203.0.113.0/24"
+            ],
+            "source_service_accounts": null,
+            "source_tags": null,
+            "target_service_accounts": null,
+            "target_tags": [
+              "web-tier"
+            ],
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "google_compute_global_address",
+      "name": "private_service_access",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "enabled",
+          "schema_version": 0,
+          "attributes": {
+            "address": "10.126.0.0",
+            "address_type": "INTERNAL",
+            "creation_timestamp": "2026-03-25T21:07:16.246-07:00",
+            "description": "",
+            "effective_labels": {},
+            "id": "projects/1097684345446/global/addresses/dev-fresh-84-private-service-access",
+            "ip_version": "",
+            "label_fingerprint": "42WmSpB8rSM=",
+            "labels": null,
+            "name": "dev-fresh-84-private-service-access",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "prefix_length": 16,
+            "project": "1097684345446",
+            "purpose": "VPC_PEERING",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/addresses/dev-fresh-84-private-service-access",
+            "terraform_labels": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "google_compute_network",
+      "name": "vpc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_subnetworks": false,
+            "delete_default_routes_on_create": true,
+            "description": "Managed by Terraform - dev-fresh-84",
+            "enable_ula_internal_ipv6": false,
+            "gateway_ipv4": "",
+            "id": "projects/1097684345446/global/networks/dev-fresh-84-vpc",
+            "internal_ipv6_range": "",
+            "mtu": 0,
+            "name": "dev-fresh-84-vpc",
+            "network_firewall_policy_enforcement_order": "AFTER_CLASSIC_FIREWALL",
+            "numeric_id": "1875489737362968124",
+            "project": "1097684345446",
+            "routing_mode": "GLOBAL",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "google_compute_subnetwork",
+      "name": "subnets",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "api-us-east1",
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2026-03-25T21:07:16.312-07:00",
+            "description": "",
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.1.1",
+            "id": "projects/1097684345446/regions/us-east1/subnetworks/dev-fresh-84-subnet-api-us-east1",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.1.0/24",
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "log_config": [
+              {
+                "aggregation_interval": "INTERVAL_5_SEC",
+                "filter_expr": "true",
+                "flow_sampling": 0.5,
+                "metadata": "INCLUDE_ALL_METADATA",
+                "metadata_fields": null
+              }
+            ],
+            "name": "dev-fresh-84-subnet-api-us-east1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "private_ip_google_access": false,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "1097684345446",
+            "purpose": "PRIVATE",
+            "region": "us-east1",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-east1/subnetworks/dev-fresh-84-subnet-api-us-east1",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "cache-europe-west1",
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2026-03-25T21:07:16.543-07:00",
+            "description": "",
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.2.1",
+            "id": "projects/1097684345446/regions/europe-west1/subnetworks/dev-fresh-84-subnet-cache-europe-west1",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.2.0/24",
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "log_config": [
+              {
+                "aggregation_interval": "INTERVAL_5_SEC",
+                "filter_expr": "true",
+                "flow_sampling": 0.5,
+                "metadata": "INCLUDE_ALL_METADATA",
+                "metadata_fields": null
+              }
+            ],
+            "name": "dev-fresh-84-subnet-cache-europe-west1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "private_ip_google_access": true,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "1097684345446",
+            "purpose": "PRIVATE",
+            "region": "europe-west1",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/europe-west1/subnetworks/dev-fresh-84-subnet-cache-europe-west1",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "db-us-central1",
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2026-03-25T21:07:16.177-07:00",
+            "description": "",
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.3.1",
+            "id": "projects/1097684345446/regions/us-central1/subnetworks/dev-fresh-84-subnet-db-us-central1",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.3.0/24",
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "log_config": [
+              {
+                "aggregation_interval": "INTERVAL_5_SEC",
+                "filter_expr": "true",
+                "flow_sampling": 0.5,
+                "metadata": "INCLUDE_ALL_METADATA",
+                "metadata_fields": null
+              }
+            ],
+            "name": "dev-fresh-84-subnet-db-us-central1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "private_ip_google_access": true,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "1097684345446",
+            "purpose": "PRIVATE",
+            "region": "us-central1",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-central1/subnetworks/dev-fresh-84-subnet-db-us-central1",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "mgmt-us-east1",
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2026-03-25T21:07:16.225-07:00",
+            "description": "",
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.4.1",
+            "id": "projects/1097684345446/regions/us-east1/subnetworks/dev-fresh-84-subnet-mgmt-us-east1",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.4.0/24",
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "log_config": [
+              {
+                "aggregation_interval": "INTERVAL_5_SEC",
+                "filter_expr": "true",
+                "flow_sampling": 0.5,
+                "metadata": "INCLUDE_ALL_METADATA",
+                "metadata_fields": null
+              }
+            ],
+            "name": "dev-fresh-84-subnet-mgmt-us-east1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "private_ip_google_access": false,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "1097684345446",
+            "purpose": "PRIVATE",
+            "region": "us-east1",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-east1/subnetworks/dev-fresh-84-subnet-mgmt-us-east1",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        },
+        {
+          "index_key": "web-us-central1",
+          "schema_version": 0,
+          "attributes": {
+            "creation_timestamp": "2026-03-25T21:07:16.215-07:00",
+            "description": "",
+            "external_ipv6_prefix": "",
+            "fingerprint": null,
+            "gateway_address": "10.0.0.1",
+            "id": "projects/1097684345446/regions/us-central1/subnetworks/dev-fresh-84-subnet-web-us-central1",
+            "internal_ipv6_prefix": "",
+            "ip_cidr_range": "10.0.0.0/24",
+            "ipv6_access_type": "",
+            "ipv6_cidr_range": "",
+            "log_config": [
+              {
+                "aggregation_interval": "INTERVAL_5_SEC",
+                "filter_expr": "true",
+                "flow_sampling": 0.5,
+                "metadata": "INCLUDE_ALL_METADATA",
+                "metadata_fields": null
+              }
+            ],
+            "name": "dev-fresh-84-subnet-web-us-central1",
+            "network": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "private_ip_google_access": false,
+            "private_ipv6_google_access": "DISABLE_GOOGLE_ACCESS",
+            "project": "1097684345446",
+            "purpose": "PRIVATE",
+            "region": "us-central1",
+            "role": "",
+            "secondary_ip_range": [],
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/regions/us-central1/subnetworks/dev-fresh-84-subnet-web-us-central1",
+            "send_secondary_ip_range_if_empty": null,
+            "stack_type": "IPV4_ONLY",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "google_service_networking_connection",
+      "name": "private_vpc_connection",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "index_key": "enabled",
+          "schema_version": 0,
+          "attributes": {
+            "deletion_policy": null,
+            "id": "projects%2F1097684345446%2Fglobal%2Fnetworks%2Fdev-fresh-84-vpc:servicenetworking.googleapis.com",
+            "network": "projects/1097684345446/global/networks/dev-fresh-84-vpc",
+            "peering": "servicenetworking-googleapis-com",
+            "reserved_peering_ranges": [
+              "dev-fresh-84-private-service-access"
+            ],
+            "service": "servicenetworking.googleapis.com",
+            "timeouts": null,
+            "update_on_creation_fail": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "module.vpc.google_compute_global_address.private_service_access",
+            "module.vpc.google_compute_network.vpc"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

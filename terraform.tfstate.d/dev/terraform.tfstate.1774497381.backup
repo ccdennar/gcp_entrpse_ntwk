@@ -1,0 +1,41 @@
+{
+  "version": 4,
+  "terraform_version": "1.5.7",
+  "serial": 200,
+  "lineage": "1eed4796-a544-09b6-3ce6-71d2cb5620e7",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "google_compute_network",
+      "name": "vpc",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "auto_create_subnetworks": false,
+            "delete_default_routes_on_create": true,
+            "description": "Managed by Terraform - dev-fresh-84",
+            "enable_ula_internal_ipv6": false,
+            "gateway_ipv4": "",
+            "id": "projects/1097684345446/global/networks/dev-fresh-84-vpc",
+            "internal_ipv6_range": "",
+            "mtu": 0,
+            "name": "dev-fresh-84-vpc",
+            "network_firewall_policy_enforcement_order": "AFTER_CLASSIC_FIREWALL",
+            "numeric_id": "2198011823895689345",
+            "project": "1097684345446",
+            "routing_mode": "GLOBAL",
+            "self_link": "https://www.googleapis.com/compute/v1/projects/fresh-84/global/networks/dev-fresh-84-vpc",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH19"
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
