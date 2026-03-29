@@ -1,0 +1,39 @@
+steps:
+  # Step 1: Authenticate using injected service account key
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        echo "$$TERRAFORM_SA_KEY" > /workspace/sa-key.json
+        gcloud auth activate-service-account --key-file=/workspace/sa-key.json
+        gcloud config set project $PROJECT_ID
+    secretEnv: ['TERRAFORM_SA_KEY']
+
+  # Step 2: Install Terraform + run deploy.sh
+  - name: 'hashicorp/terraform:1.7'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        export GOOGLE_APPLICATION_CREDENTIALS=/workspace/sa-key.json
+        chmod +x scripts/deploy.sh scripts/lib/*.sh
+        ./scripts/deploy.sh \
+          --environment ${_ENVIRONMENT} \
+          --vars-file environments/${_ENVIRONMENT}/terraform.tfvars \
+          --backend \
+          --yes \
+          --skip-validation
+    env:
+      - 'ENVIRONMENT=${_ENVIRONMENT}'
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/terraform-sa-key/versions/latest
+      env: 'TERRAFORM_SA_KEY'
+
+substitutions:
+  _ENVIRONMENT: dev   # Override per trigger (dev or prod)
+
+options:
+  logging: CLOUD_LOGGING_ONLY
