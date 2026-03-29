@@ -1,24 +1,11 @@
 steps:
-  # Init Terraform
   - name: 'hashicorp/terraform:1.6.0'
     entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        terraform init
+    args: ['-c', 'terraform init']
 
-  # Plan
   - name: 'hashicorp/terraform:1.6.0'
     entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        terraform plan
+    args: ['-c', 'terraform apply -auto-approve']
 
-  # Apply (auto approve for CI)
-  - name: 'hashicorp/terraform:1.6.0'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        terraform apply -auto-approve
+options:
+  logging: CLOUD_LOGGING_ONLY
